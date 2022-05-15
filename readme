@@ -1,1 +1,57 @@
 This repo contains the assignment3 of Deep Learning - CS6910. Mostly it deals with RNN
+To run the code, with and without attention - instruction is given in the colab
+Sweep config used to get the best configuration without attention:
+
+'''    
+sweep_config = {
+    "name": "Bayesian Sweep without attention",
+    "method": "bayes",
+    "metric": {"name": "val_accuracy", "goal": "maximize"},
+    "parameters": {
+        
+        "cell_type": {"values": ["RNN", "GRU", "LSTM"]},
+        
+        "latentDim": {"values": [256]},
+        
+        "hidden": {"values": [128, 64]},
+        
+        "optimiser": {"values": ["rmsprop", "adam"]},
+        
+        "numEncoders": {"values": [1, 2, 3]},
+        
+        "numDecoders": {"values": [1, 2, 3]},
+        
+        "dropout": {"values": [0.1, 0.2, 0.3]},
+        
+        "epochs": {"values": [5,10,15]},
+        
+        "batch_size": {"values": [32, 64]},
+    },
+}
+
+Sweep config used to get the best configuration with attention:
+sweep_config = {
+    "name": "Bayesian Sweep with attention",
+    "method": "bayes",
+    "metric": {"name": "val_accuracy", "goal": "maximize"},
+    "parameters": {
+        
+        "cell_type": {"values": ["RNN", "GRU", "LSTM"]},
+        
+        "latentDim": {"values": [256]},
+        
+        "hidden": {"values": [128, 64]},
+        
+        "optimiser": {"values": ["rmsprop", "adam"]},
+        
+        "numEncoders": {"values": [1, 2, 3]},
+        
+        "numDecoders": {"values": [1, 2, 3]},
+        
+        "dropout": {"values": [0.1, 0.2, 0.3]},
+        
+        "epochs": {"values": [5,10,15, 20]},
+        
+        "batch_size": {"values": [32, 64]},
+    },
+}
