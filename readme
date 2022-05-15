@@ -1,4 +1,4 @@
-This repo contains the assignment3 of Deep Learning - CS6910. Mostly it deals with RNN
+This repo contains the assignment3 of Deep Learning - CS6910. Mostly it deals with RNN,LSTM and GRU in the layers of seq2seq network model
 To run the code, with and without attention - instruction is given in the colab
 Sweep config used to get the best configuration without attention:
 
